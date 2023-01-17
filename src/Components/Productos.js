@@ -3,7 +3,7 @@ const productos = [
         "id": 1,
         "nombre": "Chocotorta",
         "precio": 2500,  
-        "caterogia": "Tortas",
+        "categoria": "Tortas",
         "imagen": "https://www.agencianova.com/data/fotos2/bbx_925609295_chocotrota.jpg",
 
     },

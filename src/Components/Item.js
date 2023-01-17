@@ -1,7 +1,8 @@
-export default function Item({item}) {
+import { Link } from "react-router-dom"
+export default function Item({ item }) {
     return <div>
-        <h1>nombre producto: {item.name}</h1>
-        <h5>stock: {item.count}</h5>
-        <p>descrip: {item.description}</p>
+        <Link to={`/item/${item.id}`}><h1>Nombre:{item.nombre}</h1></Link>
+        <p>Categoria: {item.categoria}</p>
+        <img src={item.imagen} alt={item.nombre} />
     </div>
 }
