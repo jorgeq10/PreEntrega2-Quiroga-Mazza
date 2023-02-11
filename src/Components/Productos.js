@@ -11,7 +11,7 @@ const productos = [
         "id": 2,
         "nombre": "Torta Oreo",
         "precio": 3200,
-        "categoria": "Tortas c/ Chocolate",
+        "categoria": "Tortas",
         "imagen": "https://http2.mlstatic.com/D_NQ_NP_865026-MLA47416698882_092021-O.jpg",
     },
     {

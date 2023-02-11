@@ -9,11 +9,12 @@ const ItemDetailContainer = () => {
 
    return (
 
-    <div>
+    <div className="card">
+        <img src={detalleProducto.imagen} alt={detalleProducto.nombre}/>
         <h1>{detalleProducto.nombre}</h1>
         <h2>{detalleProducto.precio}</h2>
         <h3>{detalleProducto.categoria}</h3>
-        <img src={detalleProducto.imagen} alt={detalleProducto.nombre}/>
+        
     </div>
    )
 

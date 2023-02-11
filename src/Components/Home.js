@@ -1,7 +1,14 @@
+import banner from "./Util/bannernuevo.png";
 export default function Home(){
     return(
     <div>
-    <h1>Bienvenidos a LeFramboise!</h1>
+    <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={`${banner}`} className="d-block w-100" alt="banner"/>
+          </div>
+        </div>
+    </div>
     </div>
     )
 }

@@ -1,11 +1,12 @@
-
+// Aqui va el Footer
 const Footer = () => {
 
     return (
-        <footer className="Footer bg-secondary text-white">
-            <p>Copyright &copy; 2023</p>
-            <p>Creado por Jorge Quiroga</p>
-        </footer>
+        <footer>
+        <div className="copyright">
+            <p><strong> © Creado por Jorge Quiroga - 2023</strong></p>
+        </div>
+    </footer>
     )
 }
 
