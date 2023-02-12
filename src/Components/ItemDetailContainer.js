@@ -1,21 +1,62 @@
 import { useParams } from "react-router-dom";
-import productos from "./Productos";
+import { getDoc , doc } from "firebase/firestore"
+import { db } from "../firebase";
+import { useEffect, useState } from "react";
 
 const ItemDetailContainer = () => {
 
-   const {id} = useParams()
-   const detalleProducto = productos.find((producto) => producto.id === parseInt(id) )
+const [item , setItem] = useState({})
 
+const [load , setLoad] = useState(false) 
+
+   const {id} = useParams()
+   
+    useEffect(()=>{
+        
+        
+
+        const itemCollection = doc(db,"Items",id)
+       
+
+        const itemFirebase = getDoc(itemCollection)
+
+        itemFirebase.then((respuesta)=>{
+
+            const doc = respuesta
+            return doc
+        }).then((item)=>{
+            if(item.exists()){
+
+                setItem({
+                    id:item.id,
+                    Nombre:item.get("Nombre"),
+                    Precio:item.get("Precio"),
+                    Categoria:item.get("Categoria"),
+                    Imagen:item.get("Imagen")
+        
+                })
+            }else{
+                console.log("producto seleccionado no existe")
+            }
+            setLoad(true)
+        }).catch((error)=>{
+            console.log(error)
+        })
+
+
+    },[id])
 
    return (
-
+    <div>
+        {!load ? "Cargando item.." :
     <div className="card">
-        <img src={detalleProducto.imagen} alt={detalleProducto.nombre}/>
-        <h1>{detalleProducto.nombre}</h1>
-        <h2>{detalleProducto.precio}</h2>
-        <h3>{detalleProducto.categoria}</h3>
-        
+        <img src={item.Imagen} alt={item.Nombre}/>
+        <h1>{item.Nombre}</h1>
+        <h2>{item.Precio}</h2>
+        <h3>{item.Categoria}</h3>  
     </div>
+}
+</div>
    )
 
 
