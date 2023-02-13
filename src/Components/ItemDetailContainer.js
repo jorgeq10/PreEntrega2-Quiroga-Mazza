@@ -56,7 +56,8 @@ const [load , setLoad] = useState(false)
         <h3>{item.Categoria}</h3>  
     </div>
 }
-</div>
+
+    </div>
    )
 
 

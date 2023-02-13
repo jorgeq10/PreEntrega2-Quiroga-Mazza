@@ -74,5 +74,13 @@ footer {
   color: white;
 }
 
+.card { 
+  width: 50%;
+  height: 50%;
+  background-color: rgb(222, 175, 175);
+}
 
-
+button {
+  background-color: #cf5692;
+  color: aliceblue;
+}
