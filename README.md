@@ -19,6 +19,6 @@ Instala las dependencias necesarias con npm install.
 Inicia el proyecto con npm start . 
 Accede a la aplicación desde http://localhost:3000 en tu navegador favorito.
 
-Deploy del Proyecto en Vercel
+## Deploy del Proyecto en Vercel
 
 [Pasteleria Leframboise](https://proyecto-final-react-quiroga-mazza.vercel.app/)
