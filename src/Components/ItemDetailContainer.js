@@ -52,7 +52,7 @@ const [load , setLoad] = useState(false)
     <div className="card">
         <img src={item.Imagen} alt={item.Nombre}/>
         <h1>{item.Nombre}</h1>
-        <h2>{item.Precio}</h2>
+        <h2>${item.Precio}</h2>
         <h3>{item.Categoria}</h3>  
     </div>
 }

@@ -75,12 +75,37 @@ footer {
 }
 
 .card { 
-  width: 50%;
-  height: 50%;
-  background-color: rgb(222, 175, 175);
+  width: 25rem;
+  background-color: rgb(255, 191, 191);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10rem;
+  border-left: solid black;
+  border-right: solid black;
+  border-bottom: solid black;
+  border-top: solid black;
+
+}
+
+
+
+.card-title {
+  color: aliceblue;
+  text-decoration: solid;
+}
+
+.detalles {
+  background-color: #e12d87;
+  border-left: solid rgb(0, 0, 0);
+  border-right: solid rgb(7, 6, 6) ;
+  border-bottom: solid black;
+  border-top: solid black;
 }
 
 button {
-  background-color: #cf5692;
+  background-color: #cf3d86;
   color: aliceblue;
+  border-radius: 10%;
+  margin-left: 5px;
+  margin-bottom: 10px;
 }
