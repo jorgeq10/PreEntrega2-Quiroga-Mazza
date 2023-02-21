@@ -47,7 +47,7 @@ const [load , setLoad] = useState(false)
     },[id])
 
    return (
-    <div>
+    <div className="d-flex flex-wrap justify-content-center align-items-center">
         {!load ? "Cargando item.." :
     <div className="card">
         <img src={item.Imagen} alt={item.Nombre}/>

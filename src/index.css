@@ -75,11 +75,12 @@ footer {
 }
 
 .card { 
-  width: 25rem;
-  background-color: rgb(255, 191, 191);
+  height: 34rem;
+  width: 20rem;
+  background-color: rgb(230, 107, 107);
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 10rem;
+  
   border-left: solid black;
   border-right: solid black;
   border-bottom: solid black;

@@ -39,7 +39,7 @@ const {categoria} = useParams()
         const itemsFiltrados = items.filter((item) => item.Categoria === categoria) 
 
         
-        return <div>
+        return <div className="d-flex flex-wrap justify-content-center align-items-center gap-5">
         {!load ? "Cargando productos.." :
         itemsFiltrados.map((item) =>{
             return <Item key={item.id} item={item} />
@@ -47,7 +47,7 @@ const {categoria} = useParams()
         </div>
     }
 
-    return <div>
+    return <div className="d-flex flex-wrap justify-content-center align-items-center gap-5" >
         {!load ? "Cargando productos.." :
             items.map((item) => {
                 return <Item key={item.id} item={item} />
