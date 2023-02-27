@@ -28,7 +28,7 @@ export default function ItemQuantityCart({ item }) {
         item.count = count
         addItemToCart(item)
         setCount(1)
-        
+
     }
 
     return (

@@ -31,20 +31,20 @@ export default function CartContextProvider(props) {
         const itemIndex = cartItems.findIndex((product) => item.id === product.id);
 
         if (itemIndex >= 0) {
-           
+
             const updatedCart = [...cartItems];
             updatedCart[itemIndex].count += item.count;
 
             setCartItems(updatedCart)
         } else {
-    
+
             setCartItems([...cartItems, item]);
-        
+
         }
 
-        toast.success('Producto agregado al carrito!', {
+        toast.success('Producto/s agregado/s al carrito!', {
             position: "bottom-right",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -61,10 +61,13 @@ export default function CartContextProvider(props) {
 
     const clearCart = () => {
         setCartItems([]);
+        toast.info("Se eliminaron todos los productos!", {
+            autoClose: 1000
+        })
     };
 
     return (
-        <CartContext.Provider value={{ cartItems, setCartItems, addItemToCart, removeFromCart, clearCart , totalPrice }}>
+        <CartContext.Provider value={{ cartItems, setCartItems, addItemToCart, removeFromCart, clearCart, totalPrice }}>
             {props.children}
         </CartContext.Provider>
     );

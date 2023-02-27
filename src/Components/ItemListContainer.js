@@ -18,32 +18,37 @@ export default function ItemListContainer() {
 
     useEffect(() => {
 
-    
+
         const itemsCollection = collection(db, 'Items')
 
         const itemsFirebase = getDocs(query(itemsCollection))
 
         itemsFirebase.then((respuesta) => {
-            //toast.info("Cargando Productos.."), 
-            // {
-            //     position: "top-right",
-            //     hideProgressBar: false,
-            //     closeOnClick: true,
-            //     autoClose: 3000,
-            //     pauseOnHover: true,
-            //     draggable: true,
-            //     progress: undefined,
-            //     transition: Slide,
-            //     theme: "dark",
-            // }
-            //)
-    
+            toast.info("cargando productos..", {
+                autoClose: 100,
+            })
+
+
             const docs = respuesta.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+
+
 
             setItems(docs)
 
             setLoad(true)
-            //toast.success("Productos Cargados!")
+            toast.success("Productos Cargados!",
+                {
+                    position: "bottom-right",
+                    hideProgressBar: true,
+                    theme: "dark",
+                    autoClose: 600,
+                    delay: 500,
+                }
+            )
+
+
+
+
 
         }).catch((error) => {
             toast.error("Ocurrio un error al cargar los productos")
@@ -51,19 +56,22 @@ export default function ItemListContainer() {
 
     }, [])
 
+
     if (categoria) {
 
         const itemsFiltrados = items.filter((item) => item.Categoria === categoria)
-
-
 
         return <div className="d-flex flex-wrap justify-content-center align-items-center gap-5">
             {!load ? null :
                 itemsFiltrados.map((item) => {
                     return <Item key={item.id} item={item} />
+
                 })}
         </div>
+
     }
+
+
 
     return <div className="d-flex flex-wrap justify-content-center align-items-center gap-5" >
         {!load ? null :
@@ -71,4 +79,5 @@ export default function ItemListContainer() {
                 return <Item key={item.id} item={item} />
             })}
     </div>
+
 }

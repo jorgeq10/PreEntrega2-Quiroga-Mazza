@@ -4,17 +4,25 @@ Bienvenidos a Pasteleria Leframboise, este proyecto es un E-Commerce y fue cread
 
 ## Características de la Tienda
 
-Un catalogo con los productos disponibles.
+Un catalogo con los mas ricos productos disponibles.
 
 Categorias para una busqueda especifica del producto.
 
 Permite elegir la cantidad de productos a comprar con un click.
 
-## Librerías que fueron utilizadas
+Posibilidad de agregar productos al carrito desde el cátalogo o desde el detalle del producto.
 
-React-router
+Ofrecemos diferentes metodos de pago.
+
+## Tecnologías que fueron utilizadas
+
+React-router-dom
 
 Bootstrap
+
+React-Toastify
+
+Firebase
 
 ## Uso e instalación:
 

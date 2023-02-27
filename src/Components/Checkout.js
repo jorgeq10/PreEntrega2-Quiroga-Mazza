@@ -71,11 +71,11 @@ const Checkout = () => {
     };
 
     return (
-        <div>
-            <h2>Checkout</h2>
+        <div class="container text-center pagoDatos">
+            <h2 className="tituloCheckout">Datos y metodo de pago</h2>
             <form onSubmit={handleFormSubmit}>
                 <div>
-                    <label htmlFor="name">Nombre:</label>
+                    <label className="nombreCheckout" htmlFor="name">Nombre:</label>
                     <input
                         type="text"
                         id="name"
@@ -87,7 +87,7 @@ const Checkout = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="address">Dirección:</label>
+                    <label className="direccionCheckout" htmlFor="address">Dirección:</label>
                     <input
                         type="text"
                         id="address"
@@ -99,7 +99,7 @@ const Checkout = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="paymentMethod">Método de pago:</label>
+                    <label className="pagoCheckout" htmlFor="paymentMethod">Método de pago:</label>
                     <select
                         id="paymentMethod"
                         name="paymentMethod"
@@ -114,7 +114,7 @@ const Checkout = () => {
                     {formErrors.paymentMethod && <span>{formErrors.paymentMethod}</span>}
                 </div>
 
-                <button type="submit">Comprar</button>
+                <button className="comprarCheckout" type="submit">Comprar</button>
             </form>
         </div>
     );

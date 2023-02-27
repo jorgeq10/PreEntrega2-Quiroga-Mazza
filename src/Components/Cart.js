@@ -9,23 +9,24 @@ export default function Cart() {
 
 
     return (
-        <div className="d-flex flex-wrap justify-content-center align-items-center gap-5">
-            <h3>Carrito</h3>
-            <button onClick={clearCart}>Vaciar</button>
+        <div class="container text-center">
+            <h3 className="tituloCarrito">Carrito</h3>
+            <button className="eliminarTodo" onClick={clearCart}>Eliminar Todo</button>
             {cartItems.length === 0 ? (
-                <p>El carrito esta vacio.</p>
+                <p className="carritoVacio">El carrito esta vacio.</p>
             ) :
-                <div className="d-flex flex-wrap justify-content-center align-items-center cardCarrito">
-                    <div className="d-flex flex-wrap justify-content-center align-items-center">
+                <div className="contenedorCarrito">
+                    <div className=" productoCart">
                         {cartItems.map((item, index) => {
-                            return (
+                            return (<div className="productoIndividual">
                                 <CartItem item={item} index={index} key={index} />
+                            </div>
                             )
 
                         })}
                     </div>
-                    <p>Total: $ {totalPrice}</p>
-                    <a href="/checkout" >
+                    <p className="total">Total: $ {totalPrice}</p>
+                    <a href="/checkout" className="compra" >
                         Realizar Compra
                     </a>
                 </div>

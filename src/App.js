@@ -11,14 +11,14 @@ import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   return (
-    <CartContextProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <CartContextProvider>
         <NavBar />
         <Main />
         <Footer />
-      </BrowserRouter>
-      <ToastContainer />
-    </CartContextProvider>
+        <ToastContainer />
+      </CartContextProvider>
+    </BrowserRouter>
 
   );
 }
