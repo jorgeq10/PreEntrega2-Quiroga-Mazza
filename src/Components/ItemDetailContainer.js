@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { getDoc , doc } from "firebase/firestore"
 import { db } from "../firebase";
 import { useEffect, useState } from "react";
+import ItemQuantityCart from "./ItemQuantityCart"
+import { toast } from "react-toastify";
 
 const ItemDetailContainer = () => {
 
@@ -36,11 +38,11 @@ const [load , setLoad] = useState(false)
         
                 })
             }else{
-                console.log("producto seleccionado no existe")
+                toast.error("producto seleccionado no existe")
             }
             setLoad(true)
         }).catch((error)=>{
-            console.log(error)
+            toast.error("error: " + error)
         })
 
 
@@ -50,10 +52,11 @@ const [load , setLoad] = useState(false)
     <div className="d-flex flex-wrap justify-content-center align-items-center">
         {!load ? "Cargando item.." :
     <div className="card">
-        <img src={item.Imagen} alt={item.Nombre}/>
-        <h1>{item.Nombre}</h1>
-        <h2>${item.Precio}</h2>
-        <h3>{item.Categoria}</h3>  
+        <img className="imagenProducto" src={item.Imagen} alt={item.Nombre}/>
+        <h1 className="nombreDetalle">{item.Nombre}</h1>
+        <h2 className="precioDetalle">Precio: ${item.Precio}</h2>
+        <h3 className="categoriaDetalle">Categoria: {item.Categoria}</h3> 
+        <ItemQuantityCart item={item} /> 
     </div>
 }
 

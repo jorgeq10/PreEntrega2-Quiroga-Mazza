@@ -1,40 +1,46 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "./Context/CartContextProvider";
 
-export default function ItemQuantityCart({item}) {
 
-const [count, setCount] = useState(1)
+
+export default function ItemQuantityCart({ item }) {
+
+    const { addItemToCart } = useContext(CartContext)
+
+    const [count, setCount] = useState(1)
 
 
     const handleAdd = () => {
-    setCount(count + 1)
-}
+        setCount(count + 1)
+    }
 
     const handleSubtract = () => {
-    setCount(count - 1)
-}
+        count === 1 ? setCount(1) : setCount(count - 1)
+    }
 
     const handleSet = () => {
-    setCount(1)
-}
+        setCount(1)
+    }
 
     const handleSubmit = (e) => {
-    e.preventDefault()
+        e.preventDefault()
 
-    item.count = count  
+        item.count = count
+        addItemToCart(item)
+        setCount(1)
+        
+    }
 
-    localStorage.setItem(item.Nombre , item)
-} 
+    return (
+        <div>
+            <button onClick={handleSet}>Reset</button>
+            <button onClick={handleSubtract}>-</button>
+            <input className="cantidadProducto" type="number" readOnly value={count} />
+            <button onClick={handleAdd}>+</button>
+            <button type="submit" onClick={handleSubmit}>Agregar al Carrito</button>
 
-return (
-    <div>
-        <button onClick={handleSet}>Set</button>
-        <button onClick={handleSubtract}>-</button>
-        <input type="number" readOnly value={count}/>
-        <button onClick={handleAdd}>+</button>
-        <button type="submit" onClick={handleSubmit}>Agregar al Carrito</button>
-
-    </div>
-)
+        </div>
+    )
 
 
 }
